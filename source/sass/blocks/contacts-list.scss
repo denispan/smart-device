@@ -1,0 +1,41 @@
+.contacts-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacts-list__item {
+  & a {
+    line-height: 20px;
+    color: $color-default-white;
+  }
+
+  & svg {
+    height: 31px;
+    vertical-align: top;
+
+    @include vp-1023 {
+      height: auto;
+    }
+  }
+
+  & span {
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &:last-child span {
+    margin-left: 3px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 124px;
+
+    @include vp-1023 {
+      margin-right: 40px;
+    }
+  }
+}
+
+
