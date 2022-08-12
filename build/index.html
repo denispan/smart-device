@@ -15,13 +15,13 @@
 </head>
 <body class="page-body">
   <header class="header">
-    <div class="container header__wrapper" aria-label="Логотип Smart Device">
+    <div class="container header__container" aria-label="Логотип Smart Device">
       <div class="header__logo">
         <svg class="header__icon-with-text" width="215" height="55" xmlns="http://www.w3.org/2000/svg">
-          <use class="header__icon-with-text" xlink:href="img/sprite_auto.svg#logo_with-text"></use>
+          <use xlink:href="img/sprite_auto.svg#logo_with-text"></use>
         </svg>
         <svg class="header__icon-no-text" width="35" height="35" xmlns="http://www.w3.org/2000/svg" aria-label="Логотип Smart Device">
-          <use class="header__icon-no-text" xlink:href="img/sprite_auto.svg#logo_no-text"></use>
+          <use xlink:href="img/sprite_auto.svg#logo_no-text"></use>
         </svg>
       </div>
       <ul class="contacts-list header__contacts">
@@ -58,8 +58,81 @@
       </div>
     </section>
   </main>
-  <footer>
-    <div class="container"></div>
+  <footer class="footer">
+    <div class="container footer__container">
+      <section class="footer__wrapper-logo-social">
+        <h2 class="visually-hidden">Мы в соцсетях</h2>
+        <svg class="footer__logo" width="215" height="55" xmlns="http://www.w3.org/2000/svg">
+          <use xlink:href="img/sprite_auto.svg#logo_with-text"></use>
+        </svg>
+        <ul class="social footer__social-list list-reset">
+          <li class="social__item">
+            <a class="social__link" href="#" aria-label="Соцсеть Pinterest.">
+              <svg class="social__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite_auto.svg#social-pinterest"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link" href="#" aria-label="Соцсеть Одноклассники.">
+              <svg class="social__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite_auto.svg#social-ok"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link" href="#" aria-label="Соцсеть Вконтакте.">
+              <svg class="social__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite_auto.svg#social-vk"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <nav class="footer__nav">
+        <h2 class="footer__title">Разделы сайта</h2>
+        <ul class="nav-list footer__nav-list footer__nav-list--left list-reset">
+          <li class="nav-list__item">
+            <a href="#">О Компаниии</a>
+          </li>
+          <li class="nav-list__item">
+            <a href="#">Продукты</a>
+          </li>
+          <li class="nav-list__item">
+            <a href="#">Производство печатных плат</a>
+          </li>
+          <li class="nav-list__item">
+            <a href="#">Монтаж печатных плат</a>
+          </li>
+        </ul>
+        <ul class="nav-list footer__nav-list footer__nav-list--right list-reset">
+          <li class="nav-list__item">
+            <a href="#">Комплектующие</a>
+          </li>
+          <li class="nav-list__item">
+            <a href="#">Доставка</a>
+          </li>
+          <li class="nav-list__item">
+            <a href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <section class="footer__contacts">
+        <h2 class="footer__title">Наш офис</h2>
+        <address class="footer__address">г. Мытищи, Олимпийский проспект, д.10</address>
+        <ul class="footer__phones-list  list-reset">
+          <li>
+            <a href="tel:+74955894050">+7 (495) 589-40-50</a>
+          </li>
+          <li>
+            <a href="tel:+79253895829">+7 (925) 389-58-29</a>
+          </li>
+          <li>
+            <a href="tel:+79253647813">+7 (925) 364-78-13</a>
+          </li>
+        </ul>
+      </section>
+    </div>
   </footer>
 
   <!-- Модалки -->

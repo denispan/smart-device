@@ -607,6 +607,12 @@ button,
   display: none;
 }
 
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .container {
   width: 100%;
   max-width: 1300px;
@@ -803,7 +809,7 @@ button,
   background: linear-gradient(#041827 85%, rgba(0, 0, 0, 0));
 }
 
-.header__wrapper {
+.header__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -878,6 +884,82 @@ button,
 
 .intro-main__btn-text-mobile {
   display: none;
+}
+
+.footer {
+  min-height: 280px;
+  background-color: #041827;
+  overflow: auto;
+}
+
+.footer__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 4fr 3fr;
+  grid-template-columns: 3fr 4fr 3fr;
+  margin-top: 50px;
+  gap: 30px;
+}
+
+.footer__logo {
+  margin-bottom: 22px;
+}
+
+.footer__social-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10px;
+}
+
+.footer__social-list li:not(:last-child) {
+  margin-right: 15px;
+}
+
+.footer__nav {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 30px;
+  -moz-column-gap: 30px;
+  column-gap: 30px;
+}
+
+.footer__title {
+  grid-column: 1 / -1;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 7px 0 20px;
+  letter-spacing: 0.05em;
+}
+
+.footer__nav-list li {
+  margin-bottom: 5px;
+}
+
+.footer__address,
+.footer__phones-list a {
+  line-height: 22px;
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__address {
+  margin-bottom: 8px;
+}
+
+.footer__phones-list li {
+  margin-bottom: 7px;
+}
+
+.nav-list__item a {
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* @media (hover: hover), screen and (min-width: 0\0) {
@@ -958,6 +1040,25 @@ button,
   .intro-main__btn {
     margin-bottom: 57px;
     margin-left: 46px;
+  }
+
+  .footer {
+    min-height: 465px;
+  }
+
+  .footer__container {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__wrapper-logo-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    grid-column: 1 / -1;
   }
 }
 
