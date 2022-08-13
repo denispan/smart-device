@@ -1,4 +1,8 @@
 .nav-list__item {
+  @include vp-1023 {
+    width: 210px;
+  }
+
   & a {
     line-height: 22px;
     color: rgba($color-default-white, 0.7);
