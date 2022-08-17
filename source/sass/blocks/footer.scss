@@ -14,7 +14,7 @@
 
 .footer__container {
   display: grid;
-  grid-template-columns: 3fr 4fr 3fr;
+  grid-template-columns: repeat(10, 1fr);
   margin-top: 50px;
   gap: 30px;
 
@@ -32,6 +32,8 @@
 }
 
 .footer__wrapper-logo-social {
+  grid-column: 1 / 4;
+
   @include vp-1023 {
     display: flex;
     justify-content: space-between;
@@ -60,29 +62,38 @@
 
 .footer__social-list {
   display: flex;
-  margin-left: 10px;
+  margin-left: 15px;
+  padding-top: 5px;
 
   & li:not(:last-child) {
-    margin-right: 15px;
+    margin-right: 25px;
+  }
+
+  @include vp-1023 {
+    margin-top: 4px;
   }
 
   @include vp-767 {
-    margin-left: 37px;
+    margin-top: 0;
+    margin-left: 42px;
+    margin-bottom: 6px;
   }
 }
 
 .footer__nav {
   display: grid;
+  grid-column: 4 / 8;
   grid-template-columns: 1fr 1fr;
   column-gap: 30px;
 
   @include vp-1023 {
+    grid-column: 1 / 2;
     display: flex;
     flex-direction: column;
   }
 
   @include vp-767 {
-  position: relative;
+    position: relative;
 
     &::before,
     &::after {
@@ -96,7 +107,7 @@
     &::before {
       left: -25px;
       top: 0;
-    };
+    }
 
     &::after {
       left: -25px;
@@ -135,11 +146,11 @@
       height: 15px;
       right: 2px;
       top: 20px;
-      background: url('../img/svg/minus.svg') no-repeat;
+      background: url("../img/svg/minus.svg") no-repeat;
     }
 
     &--close::after {
-      background: url('../img/svg/plus.svg') no-repeat;
+      background: url("../img/svg/plus.svg") no-repeat;
     }
   }
 }
@@ -161,6 +172,13 @@
 }
 
 .footer__contacts {
+  grid-column: 8 / 11;
+
+  @include vp-1023 {
+    grid-column: 2 / 3;
+  }
+
+
   @include vp-767 {
     position: relative;
 
@@ -212,8 +230,8 @@
   }
 
   @include vp-767 {
-   &--close {
-     display: none;
-   }
+    &--close {
+      display: none;
+    }
   }
 }

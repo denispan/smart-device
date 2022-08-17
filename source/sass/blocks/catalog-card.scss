@@ -12,23 +12,22 @@
     background-color: rgba($color-black-pearl, 0.5);
   }
 
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 60px;
-      height: 60px;
-      border-top-left-radius: 3px;
-      background: url("../img/svg/arrow.svg") no-repeat center;
-      background-color: $color-deep-sky-blue;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    border-top-left-radius: 3px;
+    background: url("../img/svg/arrow.svg") no-repeat center;
+    background-color: $color-deep-sky-blue;
 
-      @include vp-767 {
-        width: 40px;
-        height: 40px;
-      }
-
+    @include vp-767 {
+      width: 40px;
+      height: 40px;
     }
+  }
 
   &:nth-child(1n) {
     background-position: bottom 31% left -189px;
@@ -43,7 +42,7 @@
   }
 
   &:nth-child(2n) {
-    background-position:  bottom 28% left -533px;
+    background-position: bottom 28% left -533px;
 
     @include vp-1023 {
       background-position: bottom 45% right -196px;
@@ -55,7 +54,7 @@
   }
 
   &:nth-child(3n) {
-    background-position:  bottom 34% right -250px;
+    background-position: bottom 34% right -250px;
 
     @include vp-1023 {
       background-position: bottom 37% left -148px;

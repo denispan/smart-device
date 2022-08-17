@@ -15,13 +15,12 @@
 </head>
 <body class="page-body">
 <header class="header">
-  <div class="container header__container" aria-label="Логотип Smart Device">
+  <div class="container header__container">
     <div class="header__logo">
-      <svg class="header__icon-with-text" width="215" height="55" xmlns="http://www.w3.org/2000/svg">
+      <svg class="header__icon-with-text" width="215" height="55" xmlns="http://www.w3.org/2000/svg" aria-label="Логотип Smart Device">
         <use xlink:href="img/sprite_auto.svg#logo_with-text"></use>
       </svg>
-      <svg class="header__icon-no-text" width="35" height="35" xmlns="http://www.w3.org/2000/svg"
-           aria-label="Логотип Smart Device">
+      <svg class="header__icon-no-text" width="35" height="35" xmlns="http://www.w3.org/2000/svg" aria-label="Логотип Smart Device">
         <use xlink:href="img/sprite_auto.svg#logo_no-text"></use>
       </svg>
     </div>
@@ -169,11 +168,38 @@
   </section>
   <section class="feedback">
     <div class="container feedback__container">
-      <picture>
-        <!-- 1x: 260px; 2x: 520px-->
-        <source type="image/webp" srcset="./img/catalog/card-7-leonor-desk.webp 1x, ./img/catalog/card-7-leonor-desk.webp 2x">
-        <img srcset="./img/catalog/card-7-leonor-desk@2x.jpg 2x" src="./img/catalog/card-7-leonor-desk.jpg" width="260" height="386" alt="Пейзаж из круиза “Леонор”.">
-      </picture>
+      <div class="feedback__image-wrapper">
+        <picture>
+          <!-- 1x: 510px; 2x: 1020px-->
+          <source type="image/webp" srcset="./img/airplane.webp 1x, ./img/airplane@2x.webp 2x">
+          <img srcset="./img/airplane@2x.png 2x" src="./img/airplane.png" width="510" height="285" alt="Бумажный самолет.">
+        </picture>
+      </div>
+      <h2>
+        Остались вопросы? Задайте их нам!
+      </h2>
+      <p>
+        Мы проконсультируем Вас бесплатно
+      </p>
+      <form class="form feedback__form" action="https://echo.htmlacademy.ru/" method="get">
+        <div>
+          <label class="visually-hidden" for="name">Введите Ваше имя</label>
+          <input type="text" id="name" name="client-name" placeholder="Имя" required>
+          <label class="visually-hidden" for="client-tel">Введите Ваше имя</label>
+          <input type="text" id="client-tel" name="client-tel" placeholder="Телефон" required>
+        </div>
+        <label class="visually-hidden" for="question">Введите Ваш вопрос</label>
+        <textarea name="question" id="question" rows="6" placeholder="Ваш вопрос"></textarea>
+        <div>
+          <button class="btn btn--black" type="submit">
+            Задать вопрос
+          </button>
+            <input class="visually-hidden" type="checkbox" id="agreement" name="client-agreement" required checked>
+            <label class="form__checkbox" for="agreement">
+              Я согласен на обработку персональных данных
+            </label>
+        </div>
+      </form>
     </div>
   </section>
 </main>
@@ -187,21 +213,21 @@
       <ul class="social footer__social-list list-reset">
         <li class="social__item">
           <a class="social__link" href="#" aria-label="Соцсеть Pinterest.">
-            <svg class="social__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <svg class="social__icon" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite_auto.svg#social-pinterest"></use>
             </svg>
           </a>
         </li>
         <li class="social__item">
           <a class="social__link" href="#" aria-label="Соцсеть Одноклассники.">
-            <svg class="social__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <svg class="social__icon" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite_auto.svg#social-ok"></use>
             </svg>
           </a>
         </li>
         <li class="social__item">
           <a class="social__link" href="#" aria-label="Соцсеть Вконтакте.">
-            <svg class="social__icon" width="40" height="40" xmlns="http://www.w3.org/2000/svg">
+            <svg class="social__icon" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite_auto.svg#social-vk"></use>
             </svg>
           </a>
