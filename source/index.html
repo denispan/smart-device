@@ -26,7 +26,7 @@
     </div>
     <ul class="contacts-list header__contacts">
       <li class="contacts-list__item">
-        <a href="mailto:info@sd.ru">
+        <a href="mailto:info@sd.ru" aria-label="Написать нам">
           <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="img/sprite_auto.svg#icon-email"></use>
           </svg>
@@ -34,7 +34,7 @@
         </a>
       </li>
       <li class="contacts-list__item">
-        <a href="tel:+74950005252">
+        <a href="tel:+74950005252" aria-label="Позвонить нам">
           <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
             <use xlink:href="img/sprite_auto.svg#icon-phone"></use>
           </svg>
@@ -42,7 +42,7 @@
         </a>
       </li>
     </ul>
-    <button class="btn btn--clear-white header__btn" type="button">Заказать звонок</button>
+    <button class="btn btn--clear-white header__btn" type="button" data-open-modal="feedback">Заказать звонок</button>
   </div>
 </header>
 <main>
@@ -51,7 +51,7 @@
       <h1 class="visually-hidden">Компания Smart Device</h1>
       <p class="intro-main__tagline">Печатные платы</p>
       <p class="intro-main__tagline-description">производство и монтаж, поставка комплектующих, блоков и модулей</p>
-      <a class="btn btn--blue intro-main__btn" href="#">
+      <a class="btn btn--blue intro-main__btn" href="#feedback" data-anchor>
         <span class="intro-main__btn-text-desktop">Получить бесплатную консультацию</span>
         <span class="intro-main__btn-text-mobile">Бесплатная консультация</span>
       </a>
@@ -106,14 +106,15 @@
             Персонализация стоимости
           </h3>
           <p class="advantage-card__description">
-            Мы&thinsp;&thinsp;&thinsp; подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
+            Мы&thinsp;&thinsp;&thinsp; подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту
+            цену, которая Вас
             устраивает.
           </p>
         </li>
       </ul>
     </div>
   </section>
-  <section class="about">
+  <section class="about" id="about">
     <div class="container about__container">
       <img src="img/year.png" width="150" height="320" alt="2022 год">
       <div class="about__description-wrapper">
@@ -121,22 +122,26 @@
           О компании
         </h2>
         <p>
-          Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
+          Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997
+          года. Выполняем срочные заказы и пилотные образцы до 10 дней.
         </p>
         <p>
           Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. <span>Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span>
         </p>
         <p class="about__additional-description">
-          Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14 офисов по всей стране и 20 городов присутствия.
+          Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70% из которых
+          продолжают сотрудничество по сей день. На данный момент насчитывается более 14 офисов по всей стране и 20
+          городов присутствия.
         </p>
         <p class="about__additional-description">
-          Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и время наших клиентов.
+          Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании.
+          Использование инновационных технологий помогает экономить деньги и время наших клиентов.
         </p>
         <button class="btn btn--clear-blue about__btn" type="button">Подробнее</button>
       </div>
     </div>
   </section>
-  <section class="catalog">
+  <section class="catalog" id="catalog">
     <div class="container catalog__container">
       <h2 class="catalog__title">
         <span>Товары и услуги</span> Smart Device <span>предлагает следующие товары и услуги</span>
@@ -166,7 +171,7 @@
       </ul>
     </div>
   </section>
-  <section class="feedback">
+  <section class="feedback" id="feedback">
     <div class="container feedback__container">
       <div class="feedback__image-wrapper">
         <picture>
@@ -182,23 +187,19 @@
         Мы проконсультируем Вас бесплатно
       </p>
       <form class="form feedback__form" action="https://echo.htmlacademy.ru/" method="get">
-        <div>
-          <label class="visually-hidden" for="name">Введите Ваше имя</label>
-          <input type="text" id="name" name="client-name" placeholder="Имя" required>
-          <label class="visually-hidden" for="client-tel">Введите Ваше имя</label>
-          <input type="text" id="client-tel" name="client-tel" placeholder="Телефон" required>
-        </div>
+        <label class="visually-hidden" for="name">Введите Ваше имя</label>
+        <input type="text" id="name" name="client-name" placeholder="Имя" required>
+        <label class="visually-hidden" for="client-tel">Введите Ваше имя</label>
+        <input type="tel" id="client-tel" name="client-tel" data-tel-input maxlength="14" placeholder="Телефон" required>
         <label class="visually-hidden" for="question">Введите Ваш вопрос</label>
         <textarea name="question" id="question" rows="6" placeholder="Ваш вопрос"></textarea>
-        <div>
-          <button class="btn btn--black" type="submit">
-            Задать вопрос
-          </button>
-            <input class="visually-hidden" type="checkbox" id="agreement" name="client-agreement" required checked>
-            <label class="form__checkbox" for="agreement">
-              Я согласен на обработку персональных данных
-            </label>
-        </div>
+        <button class="btn btn--black" type="submit">
+          Задать вопрос
+        </button>
+        <input class="visually-hidden" type="checkbox" id="agreement" name="client-agreement" required checked>
+        <label class="form__checkbox" for="agreement">
+          Я согласен на обработку персональных данных
+        </label>
       </form>
     </div>
   </section>
@@ -236,12 +237,15 @@
     </section>
     <nav class="footer__nav">
       <h2 class="footer__title footer__title--close">Разделы сайта</h2>
+      <button type="button">
+        <span class="visually-hidden">Развернуть/свернуть список разделов сайта</span>
+      </button>
       <ul class="nav-list footer__nav-list list-reset">
         <li class="nav-list__item">
-          <a href="#">О Компаниии</a>
+          <a href="#about" data-anchor>О Компаниии</a>
         </li>
         <li class="nav-list__item">
-          <a href="#">Продукты</a>
+          <a href="#catalog" data-anchor>Продукты</a>
         </li>
         <li class="nav-list__item">
           <a href="#">Производство печатных плат</a>
@@ -250,7 +254,7 @@
           <a href="#">Монтаж печатных плат</a>
         </li>
       </ul>
-      <ul class="nav-list footer__nav-list footer__nav-list--close list-reset">
+      <ul class="nav-list footer__nav-list list-reset">
         <li class="nav-list__item">
           <a href="#">Комплектующие</a>
         </li>
@@ -264,6 +268,9 @@
     </nav>
     <section class="footer__contacts">
       <h2 class="footer__title footer__title--contacts">Наш офис</h2>
+      <button type="button">
+        <span class="visually-hidden">Развернуть/свернуть контакты</span>
+      </button>
       <address class="footer__address">г. Мытищи, Олимпийский проспект, д.10</address>
       <ul class="footer__phones-list  list-reset">
         <li>
@@ -280,31 +287,32 @@
   </div>
 </footer>
 
-<!-- Модалки -->
-<div class="modal modal--preload" data-modal="feedback">
+<div class="modal" data-modal="feedback">
   <div class="modal__wrapper">
     <div class="modal__overlay" data-close-modal></div>
     <div class="modal__content">
-      <p class="modal__description">Обычная модалка</p>
-      <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-        <svg width="15" height="15">
+      <h2>Закажите звонок</h2>
+      <p class="modal__description">Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+      <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть поп-ап" data-close-modal>
+        <svg width="20" height="20">
           <use xlink:href="img/sprite_auto.svg#icon-close"></use>
         </svg>
       </button>
-    </div>
-  </div>
-</div>
-
-<div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-  <div class="modal__wrapper">
-    <div class="modal__overlay" data-close-modal></div>
-    <div class="modal__content">
-      <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
-      <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-        <svg width="15" height="15">
-          <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-        </svg>
-      </button>
+      <form class="form modal__form" action="https://echo.htmlacademy.ru/" method="get">
+        <label class="visually-hidden" for="name-pop-up">Введите Ваше имя</label>
+        <input type="text" id="name-pop-up" name="client-name" placeholder="Имя" required>
+        <label class="visually-hidden" for="client-tel-pop-up">Введите Ваше имя</label>
+        <input type="tel" id="client-tel-pop-up" name="client-tel" maxlength="14" placeholder="Телефон" data-tel-input required>
+        <label class="visually-hidden" for="question-pop-up">Введите Ваш вопрос</label>
+        <textarea name="question" id="question-pop-up" rows="6" placeholder="Ваш вопрос"></textarea>
+        <button class="btn btn--black" type="submit">
+          Отправить
+        </button>
+        <input class="visually-hidden" type="checkbox" id="agreement-pop-up" name="client-agreement" required checked>
+        <label class="form__checkbox" for="agreement-pop-up">
+          Я согласен на обработку&emsp;&thinsp;персональных данных
+        </label>
+      </form>
     </div>
   </div>
 </div>

@@ -25,16 +25,28 @@
     opacity: 0.8;
     padding-left: 26px;
     align-items: end;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      opacity: 0.6;
+    }
 
     &::before {
       content: "";
       position: absolute;
       bottom: 10px;
       left: 0;
-      width: 14px;
-      height: 14px;
+      width: 15px;
+      height: 15px;
       border: 1px solid $color-default-white;
+      border-radius: 2px;
     }
+  }
+
+  & input[type="checkbox"]:focus + label {
+    outline: 2px solid $color-default-white;
+    border-radius: 2px;
   }
 
   & input[type="checkbox"]:checked + label::before {

@@ -1,6 +1,6 @@
 .catalog-card {
   position: relative;
-  background: url("../img/background-catalog-card.jpg") no-repeat bottom $color-black-pearl;
+  background: $color-black-pearl url("../img/background-catalog-card.jpg") no-repeat bottom;
 
   &::before {
     content: "";

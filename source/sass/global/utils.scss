@@ -32,13 +32,8 @@
   clip-path: inset(100%);
 }
 
-.scroll-lock-ios {
-  position: fixed;
-
-  overflow: hidden;
-}
-
 .scroll-lock {
+  position: fixed;
   overflow: hidden;
 }
 
