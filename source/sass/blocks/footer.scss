@@ -65,6 +65,10 @@
   margin-left: 15px;
   padding-top: 5px;
 
+  & li:hover {
+    opacity: 0.8;
+  }
+
   & li:not(:last-child) {
     margin-right: 25px;
   }
@@ -267,6 +271,10 @@
 .footer__phones-list {
   & li {
     margin-bottom: 7px;
+
+    &:hover {
+      opacity: 0.8;
+    }
 
     @include vp-767 {
       &:last-child {

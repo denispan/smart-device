@@ -35,8 +35,9 @@
     &::before {
       content: "";
       position: absolute;
-      bottom: 10px;
+      top: 50%;
       left: 0;
+      transform: translateY(-50%);
       width: 15px;
       height: 15px;
       border: 1px solid $color-default-white;

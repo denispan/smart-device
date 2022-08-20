@@ -18,7 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, 'build/js'),
   },
   optimization: {
-    minimize: isProd ? false : true,
+    minimize: isDev ? false : true,
   },
   module: {
     rules: [
