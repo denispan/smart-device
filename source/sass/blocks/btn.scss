@@ -2,6 +2,7 @@
   display: inline-flex;
   margin: 10px;
   padding: 10px 15px;
+  align-items: center;
 
   font-family: $ff-custom;
   letter-spacing: 0.07em;
@@ -51,6 +52,7 @@
     letter-spacing: 0.05em;
     margin-left: 0;
 
+    &:hover,
     &:focus {
       outline: 2px solid $color-default-black;
     }

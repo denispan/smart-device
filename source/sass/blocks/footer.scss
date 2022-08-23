@@ -8,7 +8,7 @@
   }
 
   @include vp-767 {
-    min-height: 475px;
+    min-height: auto;
   }
 }
 
@@ -49,7 +49,8 @@
 }
 
 .footer__logo {
-  margin-bottom: 22px;
+  display: inline-flex;
+  margin-bottom: 30px;
 
   @include vp-1023 {
     margin-bottom: 0;
@@ -62,6 +63,7 @@
 
 .footer__social-list {
   display: flex;
+  flex-wrap: wrap;
   margin-left: 15px;
   padding-top: 5px;
 
@@ -84,15 +86,40 @@
   }
 }
 
+.footer__toggle {
+  display: none;
+
+  @include vp-767 {
+    position: absolute;
+    left: -25px;
+    right: -25px;
+    top: 0;
+    min-height: 60px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    background-color: $color-transparent;
+    margin: 0;
+    padding: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      right: 27px;
+      top: 20px;
+      padding: 0;
+      background: url("../img/svg/minus.svg") no-repeat, $color-transparent;
+    }
+  }
+}
+
 .footer__nav {
   display: grid;
   grid-column: 4 / 8;
   grid-template-columns: 1fr 1fr;
   column-gap: 30px;
-
-  & button {
-    display: none;
-  }
 
   @include vp-1023 {
     grid-column: 1 / 2;
@@ -122,20 +149,7 @@
       bottom: 0;
     }
 
-    & button {
-      display: block;
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      right: 2px;
-      top: 20px;
-      padding: 0;
-      border: none;
-      background: url("../img/svg/minus.svg") no-repeat, $color-transparent;
-      cursor: pointer;
-    }
-
-    &--close button {
+    &--close button::after {
       background: url("../img/svg/plus.svg") no-repeat;
     }
 
@@ -153,8 +167,16 @@
   font-weight: 400;
   color: $color-default-white;
   text-transform: uppercase;
-  margin: 7px 0 20px;
+  margin: 7px 0 17px;
   letter-spacing: 0.05em;
+
+  &--contacts {
+    margin-top: 8px;
+  }
+
+  @include vp-1023 {
+    margin-bottom: 20px;
+  }
 
   @include vp-767 {
     position: relative;
@@ -165,7 +187,7 @@
 
     &--contacts {
       padding-top: 23px;
-      padding-bottom: 16px;
+      padding-bottom: 11px;
     }
   }
 }
@@ -199,10 +221,6 @@
 .footer__contacts {
   grid-column: 8 / 11;
 
-  & button {
-    display: none;
-  }
-
   @include vp-1023 {
     grid-column: 2 / 3;
   }
@@ -220,20 +238,7 @@
       background-color: rgba($color-alice-blue, 0.7);
     }
 
-    & button {
-      display: block;
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      right: 2px;
-      top: 20px;
-      padding: 0;
-      border: none;
-      background: url("../img/svg/minus.svg") no-repeat, $color-transparent;
-      cursor: pointer;
-    }
-
-    &--close button {
+    &--close button::after {
       background: url("../img/svg/plus.svg") no-repeat;
     }
 
@@ -244,7 +249,7 @@
   }
 }
 
-.footer__address,
+.footer__address a,
 .footer__phones-list a {
   line-height: 22px;
   font-style: normal;
@@ -259,8 +264,16 @@
 .footer__address {
   margin-bottom: 8px;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include vp-1023 {
+    margin-bottom: 3px;
+  }
+
   @include vp-767 {
-    margin-bottom: 16px;
+    margin-bottom: 11px;
 
     &--close {
       display: none;

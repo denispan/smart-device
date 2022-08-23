@@ -81,6 +81,7 @@
   flex-direction: column;
 
   min-width: 500px;
+  max-width: 1300px;
   min-height: 610px;
   padding: 44px 40px 40px;
   margin-top: 67px;
@@ -124,8 +125,12 @@
     margin-bottom: 23px;
   }
 
+  & div {
+    order: 1;
+  }
+
   & button {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding: 17px 25px 13px;
   }
 

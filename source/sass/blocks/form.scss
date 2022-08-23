@@ -16,6 +16,16 @@
     padding: 25px 15px 15px;
   }
 
+  & div {
+    position: relative;
+
+    & input {
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+    }
+  }
+
   & input[type="checkbox"] + label {
     position: relative;
     display: inline-flex;
