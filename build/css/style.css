@@ -1947,7 +1947,7 @@ button,
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding-bottom: 10px;
+    padding-bottom: 35px;
     margin-top: 34px;
     gap: 0;
   }

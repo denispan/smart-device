@@ -14,6 +14,7 @@ const footerContacts = document.querySelector('.footer__contacts');
 const navToggle = footerNav.querySelector('button');
 const contactsToggle = footerContacts.querySelector('button');
 
+const KEYCODE_TAB = 9;
 const FIRSTSIMBOLS = '+7(';
 const SELECTORS = [
   'a[href]',
@@ -29,10 +30,41 @@ const SELECTORS = [
   '[tabindex]:not([tabindex^="-"])'
 ];
 
+
+function initFocusLock(element) {
+  const focusableEls = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+  const firstFocusableEl = focusableEls[0];
+  const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+  function tabHandler(e) {
+    let isTabPressed = (e.key === 'Tab' || e.keyCode === KEYCODE_TAB);
+
+    if (!isTabPressed) {
+      return;
+    }
+
+    if (e.shiftKey) /* shift + tab */ {
+      if (document.activeElement === firstFocusableEl) {
+        lastFocusableEl.focus();
+        e.preventDefault();
+      }
+    } else /* tab */ {
+      if (document.activeElement === lastFocusableEl) {
+        firstFocusableEl.focus();
+        e.preventDefault();
+      }
+    }
+  }
+
+  element.addEventListener('keydown', tabHandler);
+}
+
 function initModals() {
 
   let focusableElementsOutModal = nonFocusByModal.querySelectorAll(SELECTORS);
   let focusableElementsInModal = modal.querySelectorAll(SELECTORS);
+
+  initFocusLock(nonFocusByModal);
 
   const setFocus = (elements) => {
     elements.forEach((el) => {
@@ -57,6 +89,7 @@ function initModals() {
   const openModal = () => {
     modal.classList.add('is-active');
     pageBody.classList.add('scroll-lock');
+    initFocusLock(modal);
     inputName.focus();
     document.addEventListener('keydown', keyEscDownHandler);
     setFocus(focusableElementsInModal);
@@ -77,6 +110,8 @@ function initModals() {
     document.removeEventListener('keydown', keyEscDownHandler);
     setFocus(focusableElementsOutModal);
     removeFocus(focusableElementsInModal);
+    initFocusLock(nonFocusByModal);
+    focusableElementsOutModal[2].focus();
   };
 
   buttonOpenModal.addEventListener('click', openModal);
