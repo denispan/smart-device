@@ -199,7 +199,7 @@ function initPhoneInput() {
       }
 
       if (inputNumbersValue.length > 4) {
-        formattedInputValue = FIRSTSIMBOLS + inputNumbersValue.substring(1, 4) + ')' + inputNumbersValue.substring(4, 14);
+        formattedInputValue = FIRSTSIMBOLS + inputNumbersValue.substring(1, 4) + ')' + inputNumbersValue.substring(4, 13);
       }
     }
 
