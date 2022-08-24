@@ -3,6 +3,7 @@ const modal = document.querySelector('.modal');
 const buttonOpenModal = document.querySelector('.header__btn');
 const overlayModal = modal.querySelector('.modal__overlay');
 const buttonCloseModal = modal.querySelector('.modal__close-btn');
+const nonFocusByModal = document.querySelector('.wrapper');
 const inputName = modal.querySelector('#name-pop-up');
 const inputPhone = modal.querySelector('#client-tel-pop-up');
 const inputQuestion = modal.querySelector('#question-pop-up');
@@ -14,8 +15,36 @@ const navToggle = footerNav.querySelector('button');
 const contactsToggle = footerContacts.querySelector('button');
 
 const FIRSTSIMBOLS = '+7(';
+const SELECTORS = [
+  'a[href]',
+  'area[href]',
+  'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
+  'select:not([disabled]):not([aria-hidden])',
+  'textarea:not([disabled]):not([aria-hidden])',
+  'button:not([disabled]):not([aria-hidden])',
+  'iframe',
+  'object',
+  'embed',
+  '[contenteditable]',
+  '[tabindex]:not([tabindex^="-"])'
+];
 
 function initModals() {
+
+  let focusableElementsOutModal = nonFocusByModal.querySelectorAll(SELECTORS);
+  let focusableElementsInModal = modal.querySelectorAll(SELECTORS);
+
+  const setFocus = (elements) => {
+    elements.forEach((el) => {
+      el.setAttribute('tabindex', '1');
+    });
+  };
+
+  const removeFocus = (elements) => {
+    elements.forEach((el) => {
+      el.setAttribute('tabindex', '-1');
+    });
+  };
 
   const keyEscDownHandler = (evt) => {
     const isEscKey = evt.key === 'Escape' || evt.key === 'Esc';
@@ -30,6 +59,8 @@ function initModals() {
     pageBody.classList.add('scroll-lock');
     inputName.focus();
     document.addEventListener('keydown', keyEscDownHandler);
+    setFocus(focusableElementsInModal);
+    removeFocus(focusableElementsOutModal);
   };
 
   const clearModal = () => {
@@ -44,6 +75,8 @@ function initModals() {
     modal.classList.remove('is-active');
     pageBody.classList.remove('scroll-lock');
     document.removeEventListener('keydown', keyEscDownHandler);
+    setFocus(focusableElementsOutModal);
+    removeFocus(focusableElementsInModal);
   };
 
   buttonOpenModal.addEventListener('click', openModal);
@@ -166,7 +199,7 @@ function initPhoneInput() {
       }
 
       if (inputNumbersValue.length > 4) {
-        formattedInputValue = FIRSTSIMBOLS + inputNumbersValue.substring(1, 4) + ')' + inputNumbersValue.substring(4, 14);
+        formattedInputValue = FIRSTSIMBOLS + inputNumbersValue.substring(1, 4) + ')' + inputNumbersValue.substring(4, 13);
       }
     }
 
